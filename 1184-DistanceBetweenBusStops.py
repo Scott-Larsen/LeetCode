@@ -10,4 +10,4 @@ class Solution:
     def distanceBetweenBusStops(self, distance: List[int], start: int, destination: int) -> int:
         inputs = [start, destination]
         forward = sum(distance[min(inputs):max(inputs)])
-        return min([forward, sum(distance) - forward])
+        return min([forward, sum(distance) - forward])A
