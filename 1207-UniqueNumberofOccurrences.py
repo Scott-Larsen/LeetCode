@@ -8,7 +8,7 @@ class Solution:
             d[x] += 1
         occurrences = []
         for key in d.keys():
-            if d[key] != 0 and d[key] not in occurrences:
+            if d[key] not in occurrences:
                 occurrences.append(d[key])
             else:
                 return False
