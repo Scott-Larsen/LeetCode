@@ -14,13 +14,19 @@
 
 class Solution:
     def judgeCircle(self, moves: str) -> bool:
-        result = [0, 0]
-        directions = {"L": ["x", -1], "R": ["x", 1], "U": ["y", 1], "D": ["y", -1]}
-        for char in moves:
-            if directions[char][0] == "x":
-                result[0] += directions[char][1]
-            else:
-                result[1] += directions[char][1]
-        if result[0] == 0 and result[1] == 0:
+        c = collections.Counter(moves)
+        if c['U'] == c['D'] and c['L'] == c['R']:
             return True
         return False
+    
+        # FIRST SOLUTION
+        # result = [0, 0]
+        # directions = {"L": ["x", -1], "R": ["x", 1], "U": ["y", 1], "D": ["y", -1]}
+        # for char in moves:
+        #     if directions[char][0] == "x":
+        #         result[0] += directions[char][1]
+        #     else:
+        #         result[1] += directions[char][1]
+        # if result[0] == 0 and result[1] == 0:
+        #     return True
+        # return False
