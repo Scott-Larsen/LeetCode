@@ -5,5 +5,4 @@
 class Solution:
     def arrayPairSum(self, nums: List[int]) -> int:
         nums.sort(reverse = True)
-        m = [min(nums[x], nums[x + 1]) for x in range(0, len(nums), 2)]
-        return sum(m)
+        return sum((min(nums[x], nums[x + 1]) for x in range(0, len(nums), 2)))
