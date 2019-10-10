@@ -16,11 +16,8 @@ class Solution:
     def subdomainVisits(self, cpdomains: List[str]) -> List[str]:
         d = collections.defaultdict(int)
         for cp in cpdomains:
-            # print(cp)
             cp = cp.split(" ")
-            # print(cp)
             count, domain = int(cp[0]), cp[1].split(".")
-            # print(count, domain)
             while len(domain) > 0:
                 d[".".join(domain)] = d[".".join(domain)] + count
                 domain.pop(0)
