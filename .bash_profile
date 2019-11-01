@@ -1,2 +1,3 @@
-# The Fuck configuration.
-eval $(thefuck --alias)
+export PATH="/Users/Scott/.pyenv:$PATH"
+
+eval "$(pyenv init -)"
