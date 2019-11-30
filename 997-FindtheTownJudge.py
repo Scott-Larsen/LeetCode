@@ -16,10 +16,15 @@
 # judge.  Otherwise, return -1.
 
 class Solution:
-    def rotateString(self, A: str, B: str) -> bool:
-        if A == B:
-            return True
-        for i in range(1, len(A)):
-            if A[i:] + A[:i] == B:
-                return True
-        return False
+    def findJudge(self, N: int, trust: List[List[int]]) -> int:
+        trusted = list(range(1, N + 1))
+        trusting = []
+        for x, y in trust:
+            if x in trusted:
+                trusted.remove(x)
+            trusting.append(y)
+        trusting = collections.Counter(trusting)
+        for t in trusted:
+            if trusting[t] + 1 == N:
+                return t
+        return -1
