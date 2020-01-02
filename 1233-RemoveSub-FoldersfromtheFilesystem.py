@@ -14,6 +14,7 @@ class Solution:
     def removeSubfolders(self, folder: List[str]) -> List[str]:
         folder.sort(key = len, reverse=True)
         res = [folder.pop()]
+        res = set(res)
         while folder:
             f = folder.pop()
             entry, f = f[:], f[1:]
@@ -22,5 +23,5 @@ class Solution:
                 if '/' + '/'.join(f[0:i + 1]) in res:
                     break
                 elif i == len(f) - 1:
-                    res.append(entry)
+                    res.add(entry)
         return res
